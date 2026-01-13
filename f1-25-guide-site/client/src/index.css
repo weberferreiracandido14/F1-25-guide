@@ -1,0 +1,252 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* F1 25 Master Guide - Design System */
+/* Design Movement: Minimalismo Corporativo com Dinâmica Futurista */
+/* Color Philosophy: Ferrari Red (#DC0000) + Neutral Gray + Gold (#FFD700) */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* F1 25 Color Palette - Ferrari Red + Gold + Neutral Gray */
+  --primary: #DC0000;           /* Ferrari Red */
+  --primary-foreground: #FFFFFF;
+  --sidebar-primary: #C40000;   /* Darker Ferrari Red */
+  --sidebar-primary-foreground: #FFFFFF;
+  --chart-1: #FFD700;           /* Gold */
+  --chart-2: #DC0000;           /* Ferrari Red */
+  --chart-3: #666666;           /* Gray */
+  --chart-4: #333333;           /* Dark Gray */
+  --chart-5: #999999;           /* Medium Gray */
+  --radius: 0.5rem;
+  --background: #F5F5F5;        /* Light Gray Background */
+  --foreground: #1A1A1A;        /* Dark Text */
+  --card: #FFFFFF;              /* White Cards */
+  --card-foreground: #1A1A1A;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1A1A;
+  --secondary: #E8E8E8;         /* Light Gray */
+  --secondary-foreground: #333333;
+  --muted: #D4D4D4;             /* Medium Gray */
+  --muted-foreground: #666666;
+  --accent: #FFD700;            /* Gold Accent */
+  --accent-foreground: #1A1A1A;
+  --destructive: #DC0000;       /* Ferrari Red for errors */
+  --destructive-foreground: #FFFFFF;
+  --border: #E0E0E0;            /* Border Gray */
+  --input: #FFFFFF;             /* White input */
+  --ring: #FFD700;              /* Gold ring */
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #1A1A1A;
+  --sidebar-accent: #FFD700;
+  --sidebar-accent-foreground: #1A1A1A;
+  --sidebar-border: #E0E0E0;
+  --sidebar-ring: #FFD700;
+}
+
+.dark {
+  --background: #0F0F0F;
+  --foreground: #FFFFFF;
+  --card: #1A1A1A;
+  --card-foreground: #FFFFFF;
+  --popover: #1A1A1A;
+  --popover-foreground: #FFFFFF;
+  --secondary: #2A2A2A;
+  --secondary-foreground: #E0E0E0;
+  --muted: #333333;
+  --muted-foreground: #999999;
+  --accent: #FFD700;
+  --accent-foreground: #1A1A1A;
+  --border: #333333;
+  --input: #2A2A2A;
+  --ring: #FFD700;
+  --sidebar: #1A1A1A;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-accent: #FFD700;
+  --sidebar-accent-foreground: #1A1A1A;
+  --sidebar-border: #333333;
+  --sidebar-ring: #FFD700;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+  h1 {
+    @apply text-5xl font-bold tracking-tight;
+  }
+  h2 {
+    @apply text-4xl font-bold tracking-tight;
+  }
+  h3 {
+    @apply text-2xl font-semibold;
+  }
+  h4 {
+    @apply text-xl font-semibold;
+  }
+  p {
+    @apply text-base leading-relaxed;
+  }
+    button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+  
+  button {
+    @apply transition-all duration-200;
+  }
+  
+  button:hover:not(:disabled) {
+    @apply shadow-md;
+  }
+}
+
+@layer utilities {
+  .font-roboto {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  /**
+   * Custom container utility that centers content and adds responsive padding.
+   *
+   * This overrides Tailwind's default container behavior to:
+   * - Auto-center content (mx-auto)
+   * - Add responsive horizontal padding
+   * - Set max-width for large screens
+   *
+   * Usage: <div className="container">...</div>
+   *
+   * For custom widths, use max-w-* utilities directly:
+   * <div className="max-w-6xl mx-auto px-4">...</div>
+   */
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem; /* 16px - mobile padding */
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  /* F1 25 Custom Components */
+  .card-accent {
+    @apply border-l-4 border-l-primary;
+  }
+
+  .divider-diagonal {
+    position: relative;
+    clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 92%);
+    margin-top: -5rem;
+    padding-top: 8rem;
+  }
+
+  .badge-difficulty {
+    @apply inline-flex items-center justify-center w-10 h-10 rounded-full text-xs font-bold text-white;
+  }
+
+  .badge-easy {
+    @apply bg-green-500;
+  }
+
+  .badge-medium {
+    @apply bg-yellow-500;
+  }
+
+  .badge-hard {
+    @apply bg-primary;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-200 hover:shadow-lg hover:scale-105;
+  }
+
+  .line-accent {
+    @apply relative;
+  }
+
+  .line-accent::before {
+    content: '';
+    @apply absolute left-0 top-0 bottom-0 w-1 bg-primary;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem; /* 32px - desktop padding */
+      padding-right: 2rem;
+      max-width: 1280px; /* Standard content width */
+    }
+  }
+
+
+}
