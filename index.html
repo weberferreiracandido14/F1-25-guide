@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>F1 25 Pro Guide | Telemetria, Setup e Equipes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__overlay"></div>
+      <div class="hero__content container">
+        <p class="hero__kicker">F1 25 Pro Guide</p>
+        <h1>Guia dinâmico de pilotagem para todas as pistas do calendário</h1>
+        <p>
+          Telemetria visual por circuito, pontos de frenagem, marchas ideais, zonas de DRS, setups por
+          condição e dicas para extrair o máximo dos carros das 10 equipes.
+        </p>
+        <div class="hero__badges">
+          <span id="badge-tracks"></span>
+          <span id="badge-teams"></span>
+          <span id="badge-setups"></span>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="tabs" aria-label="Navegação principal">
+        <div class="tabs__controls" role="tablist" aria-label="Abas">
+          <button class="tab-button active" role="tab" data-tab="pistas" aria-selected="true">Pistas e Telemetria</button>
+          <button class="tab-button" role="tab" data-tab="setup" aria-selected="false">Setup Inteligente</button>
+          <button class="tab-button" role="tab" data-tab="equipes" aria-selected="false">Carros das Equipes</button>
+        </div>
+
+        <section id="pistas" class="tab-panel active" role="tabpanel">
+          <div class="panel-header">
+            <h2>Análise dinâmica por pista</h2>
+            <p>Filtre por nome do GP ou tipo de pista e abra o detalhe completo com telemetria visual.</p>
+          </div>
+          <div class="filters">
+            <input id="track-search" type="search" placeholder="Buscar GP ou circuito..." />
+            <select id="track-filter">
+              <option value="all">Todas as pistas</option>
+              <option value="street">Circuito de rua</option>
+              <option value="high">Alta velocidade</option>
+              <option value="technical">Técnica/mista</option>
+            </select>
+          </div>
+          <div id="tracks-grid" class="grid"></div>
+        </section>
+
+        <section id="setup" class="tab-panel" role="tabpanel" hidden>
+          <div class="panel-header">
+            <h2>Setup por pista e cenário</h2>
+            <p>Escolha a pista para ver ajustes recomendados em chuva, qualifying e corrida.</p>
+          </div>
+          <div class="filters">
+            <select id="setup-track-select"></select>
+          </div>
+          <div id="setup-grid" class="grid"></div>
+        </section>
+
+        <section id="equipes" class="tab-panel" role="tabpanel" hidden>
+          <div class="panel-header">
+            <h2>Perfil dos carros das 10 equipes</h2>
+            <p>Clique no card para destacar o estilo ideal de pilotagem para cada carro.</p>
+          </div>
+          <div id="teams-grid" class="grid"></div>
+          <article id="team-highlight" class="highlight-card"></article>
+        </section>
+      </section>
+    </main>
+
+    <dialog id="track-dialog">
+      <article class="dialog-content">
+        <button id="close-dialog" class="close-dialog" aria-label="Fechar">✕</button>
+        <div id="dialog-body"></div>
+      </article>
+    </dialog>
+
+    <footer>
+      <p>
+        Nota: tentativa de coleta automática de imagens oficiais em formula1.com pode depender de acesso externo.
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
