@@ -70,6 +70,3 @@ Este projeto pode incluir conteúdo original e/ou de terceiros sob seus respecti
 - 🌐 Site: https://weberferreiracandido14.github.io/F1-25-guide/  
 
 ---
-
-Quer que eu gere também um **template de README com badges e instalação local (ex.: para desenvolvimento com servidor local)?**
-::contentReference[oaicite:9]{index=9}
